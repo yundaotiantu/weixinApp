@@ -1,0 +1,14 @@
+/* pages/weather/weather.wxss */
+.title{
+   display:block;
+   text-align:center; 
+}
+.wth{
+  display:block;
+   text-align:center; 
+}
+input{
+  background: #ddd;
+  border:1px solid blue;
+  padding:5px;
+}

@@ -1,0 +1,7 @@
+<!--pages/test/test.wxml-->
+<text class='msg'>{{message}}</text>
+<text>{{use}}</text>
+<button type='primary' bindtap='testTap'>测试</button>
+
+<button bindtap='changeMsg'>changee message</button>
+

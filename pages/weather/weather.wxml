@@ -1,0 +1,7 @@
+<!--pages/weather/weather.wxml-->
+<text  class='title'>天气预报</text>
+<view>
+  <text class='wth'>{{city}}实况天气：{{weather}}</text>
+  <input placeholder='城市' bindinput='getcity'></input>
+  <button bindtap='getWeather' type='primary'>查询天气</button>
+</view>
