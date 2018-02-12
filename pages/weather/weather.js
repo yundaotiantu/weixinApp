@@ -21,13 +21,16 @@ Page({
     wx.request({
       url:urlString,
       success:(res)=>{
-        let wether= res.data.HeWeather6[0].now.cond_txt;
-        this.setData({
-          weather: wether
-        });
-        wx.navigateTo({
-          url: '../index/index'
-        })
+        console.log(res.data.HeWeather6[0].status);
+        if (res.data.HeWeather6[0].status !='unknown city'){
+          let wether= res.data.HeWeather6[0].now.cond_txt;
+          this.setData({
+            weather: wether
+          });
+          wx.navigateTo({
+            url: '../index/index'
+          })
+        }
       }
     });
   },
