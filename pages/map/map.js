@@ -7,7 +7,7 @@ Page({
   data: {
     longitude:'110.3347',
     latitude:'25',
-    scale:'5',
+    scale:'8',
     markers:[
       {
         longitude: 110.3347,
