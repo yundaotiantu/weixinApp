@@ -1,26 +1,27 @@
 const EXPRESS = require('express');
-const mysql = require('mysql');
-
-let pool = mysql.createPool({
-    user:'root'
-})
+const MYSQL = require('mysql');
 
 let app = new EXPRESS();
 
-app.get('/',(req,res)=>{
-    let ip = req.query.ip;
-    const sql = `SELECT * FROM db.ip WHERE INET_ATON(?) BETWEEN INET_ATON(min) INET_ATON(max)`;
+let pool = MYSQL.createPool({user: 'root'});
 
-    pool.query(sql,[ip],(err,result)=>{
+app.get('/', (req, res) => {
+    let ip = req.query.ip;
+    const SQL = `
+        SELECT loc
+        FROM db.ip
+        WHERE INET_ATON(?)
+            BETWEEN INET_ATON(min)
+            AND INET_ATON(max)`;
+    pool.query(SQL, [ip], (err, results) => {
         if(err) throw err;
-        if(result.length==1){
-            let loc = result[0].loc;
-            res.send({'status':'ok',"loc":loc});
-        }else{
-            res.send({"status":'err'})
+        if (results.length === 1) {
+            let loc = results[0].loc;
+            res.send({"status":"ok", "loc":loc});
+        } else {
+            res.send({"status":"err"});
         }
-    })
-    res.end('It test');
-})
+    });
+});
 
 app.listen(3000);
