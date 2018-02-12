@@ -1,0 +1,14 @@
+
+DROP TABLE IF EXISTS db.ip;
+
+CREATE TABLE db.ip(
+    id INT AUTO_INCREMENT PRIMARY KEY  COMMENT 'id PK',
+    min VARCHAR(32) NOT NULL COMMENT '起始ip',
+    max VARCHAR(32) NOT NULL COMMENT '终止ip',
+    loc VARCHAR(255) NOT NULL COMMENT '地理位置'
+)COMMENT 'id db.ip';
+
+SELECT * from db.ip;
+
+SELECT COUNT(*) from db.ip;
+--448443

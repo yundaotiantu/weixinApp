@@ -1,0 +1,6 @@
+<!--pages/ip/ip.wxml-->
+<view>
+  <text>{{location}}</text>
+  <input bindinput='getIp' placeholder='请输入地址'></input>
+  <button bindtap='getLocation' type='primary'>Get Location</button>
+</view>

@@ -1,0 +1,7 @@
+/* pages/ip/ip.wxss */
+input,text{
+  height:60px;
+  font-size:1.5em;
+  display:block;
+  text-align:center;
+}
